@@ -27,15 +27,18 @@ end
 # Part 2
 
 def hello(name)
-  # TODO YOUR CODE HERE
+  return "Hello, " + name
 end
 
 def starts_with_consonant? s
-  # TODO YOUR CODE HERE
+  return false if s.length < 1
+  return true if  s =~ /^\w.*/ && s !~ /^[AaEeIiOoUu].*/
+  return false
 end
 
 def binary_multiple_of_4? s
-  # TODO YOUR CODE HERE
+  return false if s.length < 1
+  return true if s =~ /^[01]*00$/ || s =~ /^0$/
 end
 
 # Part 3
