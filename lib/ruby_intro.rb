@@ -44,5 +44,19 @@ end
 # Part 3
 
 class BookInStock
-# TODO YOUR CODE HERE
+  def initialize(isbn_, price_)
+    raise ArgumentError.new("isbn error!") if isbn_.empty? || isbn_ !~ /[0-9\p{Pd}]+/
+    raise ArgumentError.new("price error!") if price_ <= 0.0
+    @isbn = isbn_
+    @price = price_
+  end
+  attr_accessor:isbn
+  attr_accessor:price
+  attr_reader:isbn
+  attr_reader:price
+
+  def price_as_string
+    str = "$#{'%.2f' % @price}"
+    return str
+  end
 end
